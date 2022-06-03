@@ -5,7 +5,7 @@ from telethon.sync import TelegramClient
 from telethon.errors.rpcerrorlist import PeerFloodError, SessionPasswordNeededError
 
 
-class Spammer:
+class TeleSpam:
     def __init__(self, api_id, api_hash, phone):
         self.api_id = api_id
         self.api_hash = api_hash
@@ -98,6 +98,6 @@ if __name__ == '__main__':
     api_hash = ''
     phone = ''
 
-    new_obj = Spammer(api_id, api_hash, phone)
+    new_obj = TeleSpam(api_id, api_hash, phone)
     new_obj.connect()
     new_obj.get_chats()
