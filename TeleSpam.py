@@ -26,10 +26,7 @@ class Spammer:
 
     def get_chats(self):
         """Getting all user`s chats"""
-        groups = []
-        for dialog in self.client.get_dialogs():
-            if dialog.is_group and dialog.is_channel:
-                groups.append(dialog)
+        groups = [dialog for dialog in client.get_dialogs() if dialog.is_group and dialog.is_channel]
         print('From which chat you want to parse members:')
         [print(str(groups.index(g) + 1) + ' - ' + g.title) for g in groups]
         print('Exit - any other symbol')
@@ -46,10 +43,7 @@ class Spammer:
     def chat_scraper(self, target_group):
         """Collecting chat members"""
         print('Scraping members...', end='\r')
-        users = []
-        for user in self.client.get_participants(target_group, aggressive=False):
-            if user.username:
-                users.append(user.username)
+        users = [user.username for user in self.client.get_participants(target_group, aggressive=False) if user.username]
         print(f'Scraped {len(users)} members!')
         while (answer := input('\nDo you wanna save(1) or continue to spam(2)? ')) not in ['1', '2']:
             print('Choose 1 or 2')
