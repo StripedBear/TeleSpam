@@ -7,7 +7,7 @@ Use the command to install dependencies "pip install -r requirements.txt" or "pi
 ```from TeleSpam import TeleSpam```
 
 #### Use my.telegram.org for getting api_id and api_hash. 'phone' should be str.
- ```new_obj = Spammer(api_id, api_hash, phone)```\
+ ```new_obj = TeleSpam(api_id, api_hash, phone)```\
  ```new_obj.connect()```
 
 #### Example of importing the entire program.
