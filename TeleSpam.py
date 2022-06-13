@@ -26,7 +26,7 @@ class TeleSpam:
 
     def get_chats(self):
         """Getting all user`s chats"""
-        groups = [dialog for dialog in client.get_dialogs() if dialog.is_group and dialog.is_channel]
+        groups = [dialog for dialog in self.client.get_dialogs() if dialog.is_group and dialog.is_channel]
         print('From which chat you want to parse members:')
         [print(str(groups.index(g) + 1) + ' - ' + g.title) for g in groups]
         print('Exit - any other symbol')
