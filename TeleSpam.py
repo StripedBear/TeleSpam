@@ -94,7 +94,7 @@ class TeleSpam:
 
 
 if __name__ == '__main__':
-    api_id = 0000000
+    api_id = 000000
     api_hash = ''
     phone = ''
 
